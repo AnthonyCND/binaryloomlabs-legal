@@ -1,0 +1,179 @@
+<title>Delete account &amp; data — Livestock Keeper</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAF7F1;
+    --surface:#FFFFFF;
+    --surface-2:#F1EAD9;
+    --ink:#1C2420;
+    --ink-muted:#5B6462;
+    --accent:#2E6F63;
+    --accent-2:#C1752E;
+    --border:#E4DDCC;
+    --border-strong:#D2C9B2;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#12161A;
+      --surface:#181D21;
+      --surface-2:#1F2622;
+      --ink:#ECE7DC;
+      --ink-muted:#98A39C;
+      --accent:#5FBBA6;
+      --accent-2:#E0954F;
+      --border:#2B322C;
+      --border-strong:#38413A;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#12161A;
+    --surface:#181D21;
+    --surface-2:#1F2622;
+    --ink:#ECE7DC;
+    --ink-muted:#98A39C;
+    --accent:#5FBBA6;
+    --accent-2:#E0954F;
+    --border:#2B322C;
+    --border-strong:#38413A;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    padding:0 20px;
+  }
+  h1,h2{
+    font-family:"Fraunces", Georgia, serif;
+    font-weight:600;
+    text-wrap:balance;
+    color:var(--ink);
+    margin:0 0 .5em;
+  }
+  a{color:var(--accent);}
+  .mono{font-family:"IBM Plex Mono", ui-monospace, monospace;}
+  .eyebrow{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:.72rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    font-weight:600;
+  }
+  .page{max-width:640px; margin:0 auto; padding:3.5rem 0 4rem;}
+  .lead{color:var(--ink-muted); font-size:1.05rem; max-width:56ch;}
+  .steps{
+    counter-reset:step;
+    list-style:none;
+    margin:1.5rem 0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+  }
+  .steps li{
+    counter-increment:step;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:1rem 1.1rem 1rem 3.4rem;
+    position:relative;
+  }
+  .steps li::before{
+    content:counter(step);
+    position:absolute;
+    left:1.1rem;
+    top:1rem;
+    width:1.6rem;
+    height:1.6rem;
+    border-radius:50%;
+    background:var(--accent);
+    color:#fff;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:.85rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .steps strong{display:block; margin-bottom:.15rem;}
+  .steps .detail{color:var(--ink-muted); font-size:.92rem;}
+  section{margin-top:2.75rem;}
+  section h2{font-size:1.15rem;}
+  ul.tight{margin:.6rem 0; padding-left:1.15rem;}
+  ul.tight li{margin:.4rem 0; max-width:60ch;}
+  ul.tight li::marker{color:var(--accent-2);}
+  .callout{
+    border:1px solid var(--border-strong);
+    background:var(--surface-2);
+    border-radius:8px;
+    padding:1rem 1.2rem;
+    margin-top:.75rem;
+    font-size:.94rem;
+  }
+  .perforation{
+    height:1px;
+    margin:2.5rem 0;
+    background-image: repeating-linear-gradient(to right, var(--border-strong) 0 6px, transparent 6px 13px);
+  }
+  footer{color:var(--ink-muted); font-size:.85rem; padding-bottom:2rem;}
+</style>
+
+<div class="page">
+  <span class="eyebrow">Binary Loom Labs · Livestock Keeper</span>
+  <h1>Delete your account and data</h1>
+  <p class="lead">This page explains how to permanently delete your Livestock Keeper account and the data tied to it.</p>
+
+  <div class="perforation"></div>
+
+  <section>
+    <h2>Delete it yourself in the app</h2>
+    <ol class="steps">
+      <li>
+        <strong>Open Settings</strong>
+        <div class="detail">In Livestock Keeper, go to the Settings tab and find the <em>Your data</em> section.</div>
+      </li>
+      <li>
+        <strong>Tap "Delete account and data"</strong>
+        <div class="detail">Read what will be erased and confirm. You'll be asked to confirm your Google account once more.</div>
+      </li>
+      <li>
+        <strong>That's it</strong>
+        <div class="detail">Your cloud records, your sign-in account and the data on your phone are erased straight away.</div>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Or ask us to do it</h2>
+    <p style="color:var(--ink-muted); max-width:60ch;">If you can't open the app, email <a href="mailto:naveeshaanthony96@gmail.com">naveeshaanthony96@gmail.com</a> from the address on your Livestock Keeper account saying "please delete my Livestock Keeper account and data". We confirm the request matches your account, delete it, and email you once it's done — within 30 days of your request.</p>
+  </section>
+
+  <section>
+    <h2>What gets deleted</h2>
+    <ul class="tight">
+      <li>Every farm and record synced to your account: animals, batches, weight, milk, meat, health and breeding records, transactions, categories, budgets, targets and reminders</li>
+      <li>Your account profile (name, email, profile photo from Google Sign-In)</li>
+      <li>Your sign-in itself — you'd need to create a new account to back up to the cloud again</li>
+      <li>All data stored on your phone by the app</li>
+    </ul>
+    <div class="callout">Nothing is retained after deletion completes. We don't keep backups of deleted account data beyond what's needed to process the deletion itself.</div>
+  </section>
+
+  <section>
+    <h2>What this doesn't affect</h2>
+    <p style="color:var(--ink-muted); max-width:60ch;">Deleting your account does not cancel a subscription. Cancel it in Google Play (Settings → Subscriptions) so you aren't billed again. Subscription purchase records held by Google Play and RevenueCat follow their own retention policies; email us if you'd like your RevenueCat customer record removed too. If you never signed in, the app only stores data on your phone, and deleting it in the app (or uninstalling) removes it — no email needed.</p>
+  </section>
+
+  <div class="perforation"></div>
+
+  <footer>
+    Full details on what Livestock Keeper collects and why: <a href="privacy.html">Privacy Policy</a>.<br>
+    Questions: <a href="mailto:naveeshaanthony96@gmail.com">naveeshaanthony96@gmail.com</a>
+  </footer>
+</div>
