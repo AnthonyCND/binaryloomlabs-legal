@@ -293,6 +293,18 @@
               <td>This is the app — it's how your ledger and dashboard work</td>
             </tr>
             <tr>
+              <th>Recurring income schedules</th>
+              <td>Amount, category, payer, how often it repeats, start and end dates, and whether it is paused</td>
+              <td>Only if you set an income to repeat</td>
+              <td>So the income can be recorded for you on each payday</td>
+            </tr>
+            <tr>
+              <th>Savings goal</th>
+              <td>The percentage you choose. It stays on your device and is never synced or sent anywhere</td>
+              <td>Only if you set one</td>
+              <td>To show your progress on the dashboard</td>
+            </tr>
+            <tr>
               <th>Receipt photos</th>
               <td>A photo you take of a receipt, read once on-device for its text and discarded immediately — the photo itself is never saved</td>
               <td>Only when you use the scan feature</td>
@@ -312,7 +324,7 @@
             </tr>
             <tr>
               <th>App usage events</th>
-              <td>Sign-in/sign-up occurring, hitting a free-tier scan limit, tapping a pricing plan, exporting a report, adding income — event names and timestamps only</td>
+              <td>Sign-in/sign-up occurring, hitting a free-tier scan limit, tapping a pricing plan, exporting a report, adding income, setting up recurring income — event names and timestamps only</td>
               <td>Always, via Firebase Analytics</td>
               <td>Understanding which parts of the app are actually used, so we know what to fix or build next</td>
             </tr>
@@ -333,7 +345,7 @@
 
     <section id="cloud-sync">
       <h2><span class="num">§4</span> Cloud backup &amp; sync</h2>
-      <p>Signing in is entirely optional and is never required to use Ledger Lens's core features. If you choose to sign in with Google, your expense, income and budget records are additionally stored in Google Firestore (part of Google's Firebase platform), scoped to your account, so they survive a reinstall or carry over to a new device.</p>
+      <p>Signing in is entirely optional and is never required to use Ledger Lens's core features. If you choose to sign in with Google, your expense, income, recurring income schedules and budget records are additionally stored in Google Firestore (part of Google's Firebase platform), scoped to your account, so they survive a reinstall or carry over to a new device. Your savings goal is the exception: it stays on the device you set it on.</p>
       <p class="muted">Receipt photos are never part of this sync — as described in §3, they're not saved at all, so there's nothing to sync. Only structured records (amount, category, date, etc.) are backed up.</p>
       <p>You can sign out at any time from Settings. Signing out stops further syncing but does not delete data already saved to your account — see §7 for how to request deletion.</p>
     </section>
@@ -348,7 +360,7 @@
       <p>We do not sell your data, and we do not share it with advertisers. The only outside organization involved in handling any of this is Google, acting as our infrastructure provider through Firebase:</p>
       <ul class="tight">
         <li><strong>Firebase Authentication</strong> — handles the Google Sign-In flow itself; we never see or store your Google password.</li>
-        <li><strong>Cloud Firestore</strong> — stores your synced expense, income and budget records if you're signed in, access-restricted to your account only by server-side security rules.</li>
+        <li><strong>Cloud Firestore</strong> — stores your synced expense, income, recurring income schedule and budget records if you're signed in, access-restricted to your account only by server-side security rules.</li>
         <li><strong>Firebase Analytics</strong> — collects the behavioral usage events described in §2, aggregated and anonymized in Google's reporting tools.</li>
       </ul>
       <p>Google processes this data on our behalf, under Google's own <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacy policy</a> and <a href="https://firebase.google.com/terms/data-processing-terms" target="_blank" rel="noopener">data processing terms</a>. We do not have any other third-party integrations at this time.</p>
@@ -356,7 +368,7 @@
 
     <section id="retention">
       <h2><span class="num">§7</span> Retention &amp; deletion</h2>
-      <p>Your data is kept for as long as your account (or, if you never sign in, your local install) exists. You can delete any individual expense, income or budget directly in the app at any time — this removes it from your device immediately, and from Firestore shortly after if you're signed in. When you're signed in, a small deletion marker (just the record's internal ID and the time it was deleted, none of its contents) is kept in Firestore for up to 90 days so your other devices stay in sync, then removed.</p>
+      <p>Your data is kept for as long as your account (or, if you never sign in, your local install) exists. You can delete any individual expense, income, recurring income schedule or budget directly in the app at any time — this removes it from your device immediately, and from Firestore shortly after if you're signed in. When you're signed in, a small deletion marker (just the record's internal ID and the time it was deleted, none of its contents) is kept in Firestore for up to 90 days so your other devices stay in sync, then removed.</p>
       <p>To delete your account and all associated data entirely, email us at <a href="mailto:naveeshaanthony96@gmail.com">naveeshaanthony96@gmail.com</a> from the address associated with your account — we'll confirm once it's done. A fully self-service deletion option inside the app is planned for a future update.</p>
     </section>
 
