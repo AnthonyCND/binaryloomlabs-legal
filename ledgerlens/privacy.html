@@ -241,9 +241,9 @@
 <header class="masthead">
   <span class="eyebrow">Binary Loom Labs</span>
   <h1>Ledger Lens Privacy Policy</h1>
-  <p class="lead">Ledger Lens is a scan-first expense tracker. This page explains, plainly, what it collects, what it does with that, and what choices you have — written to match exactly what the app does, not a generic template.</p>
+  <p class="lead">Ledger Lens is a scan-first income, expense and budget tracker. This page explains, plainly, what it collects, what it does with that, and what choices you have — written to match exactly what the app does, not a generic template.</p>
   <div class="meta-row">
-    <span><strong>Effective</strong> September 18, 2026</span>
+    <span><strong>Effective</strong> October 10, 2026</span>
     <span><strong>Applies to</strong> the Ledger Lens Android and iOS apps</span>
     <span><strong>Contact</strong> naveeshaanthony96@gmail.com</span>
   </div>
@@ -256,6 +256,7 @@
     <a href="#what-we-collect">What we collect</a>
     <a href="#receipt-photos">Receipt photos &amp; OCR</a>
     <a href="#cloud-sync">Cloud backup &amp; sync</a>
+    <a href="#reports">Reports &amp; exports</a>
     <a href="#sharing">Sharing &amp; processors</a>
     <a href="#retention">Retention &amp; deletion</a>
     <a href="#security">Security</a>
@@ -272,9 +273,9 @@
       <p class="muted">The short version, if you read nothing else:</p>
       <div class="callout">
         <span class="eyebrow">In plain terms</span>
-        <p><strong>Your expense data stays on your device by default.</strong> Signing in and turning on cloud backup is optional — you can use every core feature of Ledger Lens without ever creating an account.</p>
+        <p><strong>Your expense and income data stays on your device by default.</strong> Signing in and turning on cloud backup is optional — you can use every core feature of Ledger Lens without ever creating an account.</p>
         <p><strong>Receipt photos are never saved.</strong> Text recognition happens on-device using Google ML Kit, then the photo is discarded immediately — it's never stored, uploaded, or synced, by us or anyone else.</p>
-        <p><strong>We never sell your data.</strong> The only outside parties involved are the infrastructure providers (Google Firebase) that make sign-in, backup, and crash/usage diagnostics possible — detailed in §5.</p>
+        <p><strong>We never sell your data.</strong> The only outside parties involved are the infrastructure providers (Google Firebase) that make sign-in, backup, and crash/usage diagnostics possible — detailed in §6.</p>
       </div>
     </section>
 
@@ -286,8 +287,8 @@
           <thead><tr><th>Category</th><th>What, specifically</th><th>When</th><th>Why</th></tr></thead>
           <tbody>
             <tr>
-              <th>Expense &amp; budget records</th>
-              <td>Amount, category, merchant name, date, an optional note, and whether an entry was typed or scanned</td>
+              <th>Expense, income &amp; budget records</th>
+              <td>Amount, category, merchant name or payer, date, an optional note, and whether an expense was typed or scanned</td>
               <td>Always, as you use the app</td>
               <td>This is the app — it's how your ledger and dashboard work</td>
             </tr>
@@ -311,7 +312,7 @@
             </tr>
             <tr>
               <th>App usage events</th>
-              <td>Sign-in/sign-up occurring, hitting a free-tier scan limit, tapping a pricing plan — event names and timestamps only</td>
+              <td>Sign-in/sign-up occurring, hitting a free-tier scan limit, tapping a pricing plan, exporting a report, adding income — event names and timestamps only</td>
               <td>Always, via Firebase Analytics</td>
               <td>Understanding which parts of the app are actually used, so we know what to fix or build next</td>
             </tr>
@@ -320,7 +321,7 @@
       </div>
       <div class="callout">
         <span class="eyebrow">Not collected</span>
-        <p>Ledger Lens does not collect your location, contacts, or browsing activity outside the app, and never saves a receipt photo past the moment it reads it — see §3. Usage events (the last row above) never include the actual amounts, merchant names, or categories from your expenses — only that an action happened.</p>
+        <p>Ledger Lens does not collect your location, contacts, or browsing activity outside the app, and never saves a receipt photo past the moment it reads it — see §3. Usage events (the last row above) never include the actual amounts, merchant names, payers, or categories from your records — only that an action happened.</p>
       </div>
     </section>
 
@@ -332,56 +333,61 @@
 
     <section id="cloud-sync">
       <h2><span class="num">§4</span> Cloud backup &amp; sync</h2>
-      <p>Signing in is entirely optional and is never required to use Ledger Lens's core features. If you choose to sign in with Google, your expense and budget records are additionally stored in Google Firestore (part of Google's Firebase platform), scoped to your account, so they survive a reinstall or carry over to a new device.</p>
-      <p class="muted">Receipt photos are never part of this sync — as described in §3, they're not saved at all, so there's nothing to sync. Only structured expense data (amount, category, date, etc.) is backed up.</p>
-      <p>You can sign out at any time from Settings. Signing out stops further syncing but does not delete data already saved to your account — see §6 for how to request deletion.</p>
+      <p>Signing in is entirely optional and is never required to use Ledger Lens's core features. If you choose to sign in with Google, your expense, income and budget records are additionally stored in Google Firestore (part of Google's Firebase platform), scoped to your account, so they survive a reinstall or carry over to a new device.</p>
+      <p class="muted">Receipt photos are never part of this sync — as described in §3, they're not saved at all, so there's nothing to sync. Only structured records (amount, category, date, etc.) are backed up.</p>
+      <p>You can sign out at any time from Settings. Signing out stops further syncing but does not delete data already saved to your account — see §7 for how to request deletion.</p>
+    </section>
+
+    <section id="reports">
+      <h2><span class="num">§5</span> Reports &amp; exports</h2>
+      <p>Plus accounts can export their expenses and income from the Reports screen as a CSV spreadsheet or a PDF summary. The file is created <strong>on your device</strong>, from the data already stored there, and kept in a temporary folder. It leaves your device only when you choose where to send or save it using your phone's share sheet. We never receive these files, and no financial data from them is sent to analytics.</p>
     </section>
 
     <section id="sharing">
-      <h2><span class="num">§5</span> Sharing &amp; processors</h2>
+      <h2><span class="num">§6</span> Sharing &amp; processors</h2>
       <p>We do not sell your data, and we do not share it with advertisers. The only outside organization involved in handling any of this is Google, acting as our infrastructure provider through Firebase:</p>
       <ul class="tight">
         <li><strong>Firebase Authentication</strong> — handles the Google Sign-In flow itself; we never see or store your Google password.</li>
-        <li><strong>Cloud Firestore</strong> — stores your synced expense/budget records if you're signed in, access-restricted to your account only by server-side security rules.</li>
+        <li><strong>Cloud Firestore</strong> — stores your synced expense, income and budget records if you're signed in, access-restricted to your account only by server-side security rules.</li>
         <li><strong>Firebase Analytics</strong> — collects the behavioral usage events described in §2, aggregated and anonymized in Google's reporting tools.</li>
       </ul>
       <p>Google processes this data on our behalf, under Google's own <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacy policy</a> and <a href="https://firebase.google.com/terms/data-processing-terms" target="_blank" rel="noopener">data processing terms</a>. We do not have any other third-party integrations at this time.</p>
     </section>
 
     <section id="retention">
-      <h2><span class="num">§6</span> Retention &amp; deletion</h2>
-      <p>Your data is kept for as long as your account (or, if you never sign in, your local install) exists. You can delete any individual expense or budget directly in the app at any time — this removes it from your device immediately, and from Firestore shortly after if you're signed in.</p>
+      <h2><span class="num">§7</span> Retention &amp; deletion</h2>
+      <p>Your data is kept for as long as your account (or, if you never sign in, your local install) exists. You can delete any individual expense, income or budget directly in the app at any time — this removes it from your device immediately, and from Firestore shortly after if you're signed in. When you're signed in, a small deletion marker (just the record's internal ID and the time it was deleted, none of its contents) is kept in Firestore for up to 90 days so your other devices stay in sync, then removed.</p>
       <p>To delete your account and all associated data entirely, email us at <a href="mailto:naveeshaanthony96@gmail.com">naveeshaanthony96@gmail.com</a> from the address associated with your account — we'll confirm once it's done. A fully self-service deletion option inside the app is planned for a future update.</p>
     </section>
 
     <section id="security">
-      <h2><span class="num">§7</span> Security</h2>
+      <h2><span class="num">§8</span> Security</h2>
       <p>Data in transit between the app and Firebase is encrypted (HTTPS/TLS). Synced records in Firestore are protected by security rules that restrict every account's data to that account alone — no other user, signed in or not, can read or write it. Locally, your data lives in your device's normal app storage, protected the same way any other app's data is on your phone.</p>
     </section>
 
     <section id="your-rights">
-      <h2><span class="num">§8</span> Your rights</h2>
+      <h2><span class="num">§9</span> Your rights</h2>
       <p>Wherever you are, you have the right to access, correct, and delete your data — and in Ledger Lens, you largely don't need to ask us for most of it:</p>
       <ul class="tight">
         <li><strong>Access &amp; correction</strong> — everything you've entered is visible and editable directly in the app (tap any entry in History to edit or delete it).</li>
-        <li><strong>Deletion</strong> — delete individual entries in-app any time, or request full account deletion per §6.</li>
-        <li><strong>Portability &amp; export</strong> — not yet built; if you need your data in the meantime, email us and we'll help directly.</li>
+        <li><strong>Deletion</strong> — delete individual entries in-app any time, or request full account deletion per §7.</li>
+        <li><strong>Portability &amp; export</strong> — Plus accounts can export their expenses and income as CSV or PDF from Reports. On the free plan, email us and we'll provide your data directly.</li>
       </ul>
       <p class="muted">If you're in the EU/UK, these map to your rights under GDPR; if you're a California resident, to your rights under the CCPA. We apply the same practices to everyone regardless of where you live.</p>
     </section>
 
     <section id="children">
-      <h2><span class="num">§9</span> Children's privacy</h2>
+      <h2><span class="num">§10</span> Children's privacy</h2>
       <p>Ledger Lens is not directed at children, and we do not knowingly collect data from anyone under 13 (or the minimum age required in your country). If you believe a child has provided us data, contact us at the email below and we'll delete it.</p>
     </section>
 
     <section id="changes">
-      <h2><span class="num">§10</span> Changes to this policy</h2>
+      <h2><span class="num">§11</span> Changes to this policy</h2>
       <p>If this policy changes in a way that meaningfully affects what we collect or how we use it, we'll update the effective date above and, where required, notify you in-app. Otherwise, this page always reflects our current practice — check back if you're curious.</p>
     </section>
 
     <section id="contact">
-      <h2><span class="num">§11</span> Contact</h2>
+      <h2><span class="num">§12</span> Contact</h2>
       <p>Questions, deletion requests, or anything else: <a href="mailto:naveeshaanthony96@gmail.com">naveeshaanthony96@gmail.com</a>.</p>
     </section>
 
